@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Mild professional palette tokens */
+  --color-brand-50: #f2f7f5;
+  --color-brand-100: #e2ede9;
+  --color-brand-200: #c6ddd5;
+  --color-brand-300: #9fc3b6;
+  --color-brand-400: #74a393;
+  --color-brand-500: #518575;
+  --color-brand-600: #3c6c5e;
+  --color-brand-700: #2f564b;
+  --color-brand-800: #28463e;
+  --color-brand-900: #233b34;
+  --color-brand-950: #12211d;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: #27303f;
+    background-color: #f8faf9;
+  }
+  
+  h1, h2, h3, .font-display {
+    letter-spacing: -0.02em;
+    color: #1a2332;
+  }
+
+  ::selection {
+    background-color: #dbebe6;
+    color: #1a3933;
+  }
+
+  /* Image protection against dragging and mobile callouts */
+  .no-copy-image {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}
+
+/* Print Protection */
+@media print {
+  img[src*="IMG-20261024"],
+  .protected-avatar {
+    visibility: hidden !important;
+    display: none !important;
+  }
+}
+
+/* Subtle, soft scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f4f3;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd8d4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a9beba;
+}
